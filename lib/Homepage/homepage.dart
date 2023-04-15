@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+
+import '../pallete.dart';
+import 'dashboarddrawer.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 8.0,
+        backgroundColor: Pallete.backgroundColor,
+        title: const Text("Chemeasy"),
+      ),
+      drawer: const DashboardDrawer(),
+
+    );
+  }
+}

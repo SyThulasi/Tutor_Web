@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutor_web/Homepage/homepage.dart';
 import '../widgets/gradient_button.dart';
 import '../widgets/login_field.dart';
 import '../widgets/rounded_button.dart';
@@ -31,8 +32,12 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 15),
               const LoginField(hintText: 'Password'),
               const SizedBox(height: 20),
-              GradientButton(press: () {  },),
-              //RoundedButton(text: 'Log In', press: () {  }, length: size.width*0.09,),
+              GradientButton(press: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (contex) {
+                  //return CameraScreen(widget.cameras);
+                  return const HomePage();
+                }));
+              },),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
