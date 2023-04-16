@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../pallete.dart';
 
-
 class GradientButton extends StatelessWidget {
-
   final VoidCallback press;
   const GradientButton({Key? key, required this.press}) : super(key: key);
 

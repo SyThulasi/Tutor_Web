@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pallete.dart';
+
 class RoundedButton extends StatelessWidget {
   final String text;
   final VoidCallback press;
@@ -15,7 +17,6 @@ class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 6),
       width: length,
@@ -31,16 +32,16 @@ class RoundedButton extends StatelessWidget {
 
   Widget newElevatedButton() {
     return ElevatedButton(
-      child: Text(
-        text,
-        style: TextStyle(color: textColor, fontSize: 17.0),
-      ),
-      onPressed: press,
-      style: ElevatedButton.styleFrom(
-        fixedSize: const Size(395, 55),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-      ),
-    );
+        child: Text(
+          text,
+          style: TextStyle(color: Pallete.gradient2, fontSize: 20.0),
+        ),
+        onPressed: press,
+        style: ElevatedButton.styleFrom(
+          fixedSize: const Size(395, 55),
+          backgroundColor: Colors.white,
+          shadowColor: Colors.transparent,
+        ),
+        onHov);
   }
 }

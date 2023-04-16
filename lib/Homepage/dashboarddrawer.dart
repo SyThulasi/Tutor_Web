@@ -30,7 +30,7 @@ class DashboardDrawer extends StatelessWidget {
       children: const [
         CircleAvatar(
           radius: 52,
-          backgroundImage: AssetImage('assets/images/userImage.png'),
+          backgroundImage: AssetImage('assets/images/user.jpg'),
         ),
         SizedBox(height: 15),
         Text('Thulasiyan',
@@ -38,11 +38,14 @@ class DashboardDrawer extends StatelessWidget {
                fontWeight: FontWeight.bold,
                fontSize: 20,
              ),),
+        SizedBox(height: 10),
         Text('15A001',
           style: TextStyle(
+            color: Colors.grey,
             fontWeight: FontWeight.normal,
             fontSize: 15,
           ),),
+        SizedBox(height: 10),
         // ListTile(
         //   horizontalTitleGap: 50,
         //   title: Text('Thulasiyan',
@@ -65,7 +68,9 @@ class DashboardDrawer extends StatelessWidget {
     child: Column(
       //mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
-      children: [
+      children: [const SizedBox(
+        height: 10,
+      ),
         Padding(
           padding: const EdgeInsets.only(left: 10.0),
           child: ListTile(

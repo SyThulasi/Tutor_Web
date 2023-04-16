@@ -9,9 +9,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -32,12 +30,15 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 15),
               const LoginField(hintText: 'Password'),
               const SizedBox(height: 20),
-              GradientButton(press: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (contex) {
-                  //return CameraScreen(widget.cameras);
-                  return const HomePage();
-                }));
-              },),
+              GradientButton(
+                press: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (contex) {
+                    //return CameraScreen(widget.cameras);
+                    return const HomePage();
+                  }));
+                },
+              ),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -51,8 +52,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                      onTap: () {
-                      },
+                      onTap: () {},
                       child: const Text(
                         "Sign Up",
                         style: TextStyle(
