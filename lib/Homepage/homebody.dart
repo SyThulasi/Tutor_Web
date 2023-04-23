@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tutor_web/Pages/secondaryHomePage.dart';
 import 'package:tutor_web/pallete.dart';
 import 'package:tutor_web/widgets/rounded_button.dart';
+import 'package:tutor_web/widgets/bottom.dart';
+
+import '../Models/roundedButton_model.dart';
+import 'background.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -11,9 +16,37 @@ class HomeBody extends StatefulWidget {
 
 class _HomeBodyState extends State<HomeBody> {
   @override
+  List<RoundedButtonModel> learningBoosterButtons = [];
+  void initState() {
+    super.initState();
+    // Initialize the counter variable here
+
+    learningBoosterButtons.add(
+        RoundedButtonModel(buttonName: '01. General Chemistry', press: () {}));
+    learningBoosterButtons.add(RoundedButtonModel(
+        buttonName: '02. Chemical Calculations', press: () {}));
+    learningBoosterButtons.add(RoundedButtonModel(
+        buttonName: '03. Gaseous State of Matter', press: () {}));
+    learningBoosterButtons
+        .add(RoundedButtonModel(buttonName: '04. Energetics', press: () {}));
+    learningBoosterButtons.add(RoundedButtonModel(
+        buttonName: '05. Inorganic Chemistry', press: () {}));
+    learningBoosterButtons.add(
+        RoundedButtonModel(buttonName: '06. Organic Chemistry', press: () {}));
+    learningBoosterButtons.add(
+        RoundedButtonModel(buttonName: '07. Chemical Kinetics', press: () {}));
+    learningBoosterButtons
+        .add(RoundedButtonModel(buttonName: '08. Equilibrium', press: () {}));
+    learningBoosterButtons.add(
+        RoundedButtonModel(buttonName: '09. Electrochemistry', press: () {}));
+    learningBoosterButtons.add(RoundedButtonModel(
+        buttonName: '10. Industrial & Environmental Chemistry', press: () {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return Background(
       child: Column(
         children: [
           Expanded(
@@ -38,8 +71,16 @@ class _HomeBodyState extends State<HomeBody> {
                     RoundedButton(
                         text: 'Learning Boosters',
                         imagePath: 'assets/images/booster.png',
-                        press: () {},
-                        length: size.width * 0.3),
+                        press: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (contex) {
+                            //return CameraScreen(widget.cameras);
+                            return SecondaryHomePage(
+                              buttonDetails: learningBoosterButtons,
+                            );
+                          }));
+                        },
+                        length: size.width * 0.35),
                     SizedBox(
                       height: size.height * 0.03,
                     ),
@@ -47,7 +88,7 @@ class _HomeBodyState extends State<HomeBody> {
                         text: 'Unit Wise Classes',
                         imagePath: 'assets/images/book.png',
                         press: () {},
-                        length: size.width * 0.3),
+                        length: size.width * 0.35),
                     SizedBox(
                       height: size.height * 0.03,
                     ),
@@ -55,7 +96,7 @@ class _HomeBodyState extends State<HomeBody> {
                         text: 'Pastpaer Elaborations',
                         imagePath: 'assets/images/exam.png',
                         press: () {},
-                        length: size.width * 0.3),
+                        length: size.width * 0.35),
                     SizedBox(
                       height: size.height * 0.03,
                     ),
@@ -63,7 +104,7 @@ class _HomeBodyState extends State<HomeBody> {
                         text: 'Model Paper Discussions',
                         imagePath: 'assets/images/paper1.png',
                         press: () {},
-                        length: size.width * 0.3),
+                        length: size.width * 0.35),
                     SizedBox(
                       height: size.height * 0.03,
                     ),
@@ -71,7 +112,7 @@ class _HomeBodyState extends State<HomeBody> {
                         text: 'Miscellaneous',
                         imagePath: 'assets/images/miscel.png',
                         press: () {},
-                        length: size.width * 0.3),
+                        length: size.width * 0.35),
                   ],
                 ),
               ),
@@ -86,43 +127,8 @@ class _HomeBodyState extends State<HomeBody> {
           //   child: Text('Main content goes here'),
           // ),
           // Container at the bottom of the screen
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(16),
-              color: Colors.blue,
-              child: Center(
-                child: Text(
-                  'Container at the bottom',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          Bottom(),
         ],
-      ),
-    );
-  }
-}
-
-class devider extends StatelessWidget {
-  const devider({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 2,
-      width: size.width * 0.3,
-      child: Container(
-        color: Colors.white,
       ),
     );
   }

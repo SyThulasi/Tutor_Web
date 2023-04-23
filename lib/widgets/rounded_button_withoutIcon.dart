@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../pallete.dart';
 
-class RoundedButton extends StatelessWidget {
+class RoundedButtonWOICON extends StatelessWidget {
   final String text;
   final VoidCallback press;
   final Color textColor;
   final double length;
-  final String imagePath;
-  const RoundedButton({
+  const RoundedButtonWOICON({
     Key? key,
     required this.text,
     required this.press,
     this.textColor = Colors.white,
     required this.length,
-    required this.imagePath,
   }) : super(key: key);
 
   @override
@@ -40,20 +38,12 @@ class RoundedButton extends StatelessWidget {
           SizedBox(
             width: 15,
           ),
-          Image.asset(
-            imagePath,
-            height: 25,
-            width: 25,
-          ),
-          SizedBox(
-            width: 25,
-          ),
           Expanded(
             child: Text(
               text,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                color: Pallete.gradient2,
+                color: Colors.white,
                 fontSize: 20.0,
               ),
             ),
@@ -63,7 +53,7 @@ class RoundedButton extends StatelessWidget {
       onPressed: press,
       style: ElevatedButton.styleFrom(
         fixedSize: const Size(395, 55),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
         shadowColor: Colors.transparent,
       ),
     );

@@ -21,7 +21,7 @@ class RoundedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       width: length,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(40),
@@ -46,7 +46,7 @@ class RoundedButton extends StatelessWidget {
             width: 25,
           ),
           SizedBox(
-            width: 25,
+            width: 15,
           ),
           Expanded(
             child: Text(
